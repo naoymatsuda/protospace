@@ -26,3 +26,15 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+ユーザーテーブル
+-アドレス string
+-パスワード string
+-名前 string
+
+投稿テーブル
+-image string
+-title string
+-day string
+-タグ string
+-投稿者 string
