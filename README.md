@@ -23,18 +23,26 @@ Things you may want to cover:
 
 * ...
 
+user table
+-mail string
+-password string
+-name string
+-member strig
+-profile string
+-works string
+-avatar string
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
-
-ユーザーテーブル
--アドレス string
--パスワード string
--名前 string
-
-投稿テーブル
--image string
+post table
 -title string
 -day string
 -タグ string
 -投稿者 string
+
+image table
+-image string
+
+likes table
+-like
+
+comment table
+-comment
