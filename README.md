@@ -7,33 +7,34 @@
 - works string
 - avatar string
 
-## post table
+## posts table
 - title string
-- user_id preference
+- user_id references
 - catch_cory string
 - concept string
 
 ## images table
 - status integer
 - image string
-- post_id preference
+- post_id references
 
 ## likes table
-- user_id string
-- post_id string
+- user_id references
+- post_id references
 
-## contents table
-- user_id string
-- post_id string
+## comments table
+- user_id references
+- post_id references
 
 ## association
-- users has_many post
-- users has_many contents
-- users has_many likes
-- post belongs_to images
+- user has_many posts
+- user has_many comments
+- user has_many likes
+- image belongs_to post
+- post has_many images
 - post has_many likes
-- post has_many contents
-- contents belongs_to post
-- contents belongs_to users
-- likes belongs_to users
-- likes belongs_to post
+- post has_many comments
+- comment belongs_to post
+- comment belongs_to users
+- like belongs_to user
+- like belongs_to post
