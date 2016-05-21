@@ -13,7 +13,7 @@
 - avatar string
 
 ## posts table
-association
+### association
 - post has_many images
 - post has_many likes
 - post has_many comments
