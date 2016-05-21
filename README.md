@@ -37,18 +37,18 @@
 ## likes table
 ### association
 - like belongs_to user
-- like belongs_to post
+- like belongs_to prototype
 
 ### column
 - user_id references
-- post_id references
+- prototype_id references
 
 ## comments table
 ### association
 - comment belongs_to prototype
-- comment belongs_to users
+- comment belongs_to user
 
 ### column
 - text text
 - user_id references
-- post_id references
+- prototype_id references
