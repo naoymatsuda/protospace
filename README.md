@@ -22,7 +22,7 @@
 ### column
 - title string
 - user_id references
-- catch_cory string
+- catch_copy string
 - concept string
 
 ## images table
@@ -32,7 +32,7 @@
 ### column
 - status integer
 - image string
-- post_id references
+- prototype_id references
 
 ## likes table
 ### association
