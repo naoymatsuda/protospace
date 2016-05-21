@@ -18,32 +18,32 @@
 - post has_many images
 - post has_many likes
 - post has_many comments
-column
+### column
 - title string
 - user_id references
 - catch_cory string
 - concept string
 
 ## images table
-association
+### association
 - image belongs_to post
-column
+### column
 - status integer
 - image string
 - post_id references
 
 ## likes table
-association
+### association
 - like belongs_to user
 - like belongs_to post
-column
+### column
 - user_id references
 - post_id references
 
 ## comments table
-association
+### association
 - comment belongs_to post
 - comment belongs_to users
-column
+### column
 - user_id references
 - post_id references
