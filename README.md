@@ -1,8 +1,9 @@
-## users 
+## users table
 ### association
 - user has_many posts
 - user has_many comments
 - user has_many likes
+
 ### column
 - mail string
 - password string
