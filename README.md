@@ -1,4 +1,4 @@
-## users table
+## users 
 ### association
 - user has_many posts
 - user has_many comments
