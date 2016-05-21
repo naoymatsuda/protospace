@@ -1,6 +1,6 @@
 ## users table
 ### association
-- user has_many posts
+- user has_many prototypes
 - user has_many comments
 - user has_many likes
 
@@ -13,11 +13,11 @@
 - works string
 - avatar string
 
-## posts table
+## prototypes table
 ### association
-- post has_many images
-- post has_many likes
-- post has_many comments
+- prototype has_many images
+- prototype has_many likes
+- prototype has_many comments
 
 ### column
 - title string
@@ -27,7 +27,7 @@
 
 ## images table
 ### association
-- image belongs_to post
+- image belongs_to prototype
 
 ### column
 - status integer
@@ -45,9 +45,10 @@
 
 ## comments table
 ### association
-- comment belongs_to post
+- comment belongs_to prototype
 - comment belongs_to users
 
 ### column
+- text text
 - user_id references
 - post_id references
