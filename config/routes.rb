@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
- get ' prototype ' => ' prototype #index '
+ root 'prototypes#index'
+ get 'prototype/index' => 'prototypes#index'
+ get 'prototype/show' => 'prototypes#show'
+ get 'prototype/new' => 'prototypes#new'
 end
