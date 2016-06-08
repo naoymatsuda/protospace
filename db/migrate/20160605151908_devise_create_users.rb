@@ -21,8 +21,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :name
       t.string :member
-      t.string :mail
-      t.string :password
       t.string :profile
       t.string :works
       t.string :avatar
