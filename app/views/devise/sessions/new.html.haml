@@ -11,6 +11,11 @@
         Remember me
     %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Sign in
   .text-center
+     <%= f.text_field :mail %></div>
+     <%= f.text_field :password %></div>
     %p
       Not a member?
-      %a{href: "/users/sign_in"} Sign up now
+      <% if user_signed_in? %>
+    %a{href: "/users/sign_in"} Sign up now
+    <% end %>
+
