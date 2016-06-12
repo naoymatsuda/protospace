@@ -1,5 +1,5 @@
 .container
-  %form.form-signin
+　%form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
     %h2.form-signin-heading Please sign in
     %label.sr-only{for: "inputEmail"} Email address
     %input#inputEmail.form-control{autofocus: "", placeholder: "Email address", required: "", type: "email"}/
@@ -11,11 +11,11 @@
         Remember me
     %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Sign in
   .text-center
-     <%= f.text_field :mail %></div>
-     <%= f.text_field :password %></div>
+     % f.text_field :mail
+     % f.text_field :password
     %p
       Not a member?
-      <% if user_signed_in? %>
+     % if user_signed_in?
     %a{href: "/users/sign_in"} Sign up now
-    <% end %>
+  %end
 
