@@ -1,10 +1,10 @@
 .container
   %form.form-signin
     %h2.form-signin-heading Please sign in
-    %label.sr-only{f.text_field: "inputEmail"} Email address
-    %input#inputEmail.form-control{autofocus: "", placeholder: "Email address", required: "", type: "email"}/
+    %label.sr-only{text: "inputEmail"} Email address
+     =f.text_field: email, placeholder: "inputEmail" required: true ,autocomplete: "off",Email address
     %label.sr-only{f.text_field: "inputPassword"} Password
-    %input#inputPassword.form-control{placeholder: "Password", required: "", type: "password"}/
+    = f.password_field: password, placeholder: "inputpassword" required: true ,autocomplete: "off",Email address
     .checkbox
       %label
         %input{type: "checkbox", value: "remember-me"}/
