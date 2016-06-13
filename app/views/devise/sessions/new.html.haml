@@ -1,5 +1,5 @@
 .container
-  %form.form-signin
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     %h2.form-signin-heading Please sign in
     %label.sr-only{text: "inputEmail"} Email address
      =f.text_field: email, placeholder: "input Email" required: true ,autocomplete: "off"
