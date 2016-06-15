@@ -5,24 +5,24 @@
         %h2 Register
         .user-name_image.row
           .user-name.col-md-10
-            %input{type: "text", placeholder: "Username"}/
+            = f.username_field :username, placeholder: "Username", required: true, autocomplete: true
           .user-image.col-md-2
             %button.btn.btn-primary Add image
             %input{type: "file"}/
-        %input.user-email{type: "email", placeholder: "E-Mail"}/
-        %input.user-password{type: "password", placeholder: "Password"}/
+        = f.email_field :email, placeholder: "E-Mail", required: true, autocomplete: true
+        = f.password_field :password, placeholder: "Password", required: true, autocomplete: true
       .col-md-12
         %h4 Member of
         .user-user-member.row
           .user-name.col-md-12
-            %input{type: "text", placeholder: "Member"}/
+            = f.member_field :member, placeholder: "Member", required: true, autocomplete: true
         %h4 Profile
         .user-user-profile.row
           .user-name.col-md-12
-            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Profile"}
+            = f.profile_field :profile, placeholder: "Profile", required: true, autocomplete: true
         %h4 Works
         .user-name_image.row
           .user-name.col-md-12
-            %textarea{name: "textarea", cols: "30", rows: "4", placeholder: "Works"}
+            = f.works_field :works, placeholder: "Works", required: true, autocomplete: true
     .row.text-center.user-btn
       %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Save
