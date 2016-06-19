@@ -9,8 +9,4 @@ class PrototypesController < ApplicationController
   def new
   end
 
-  def registration
-  end
-
-
 end
