@@ -3,8 +3,6 @@
     Please sign in
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     %label.sr-only{for: "inputEmail"} Email address
-    = f.file_field :avatar_field
-    %label.sr-only{for: "inputEmail"} Email address
     = f.email_field :email, placeholder: "input Email", required: true
     %label.sr-only{for: "inputPassword"} Password
     = f.password_field :password, placeholder: "input password", required: true

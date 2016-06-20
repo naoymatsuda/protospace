@@ -8,6 +8,7 @@
           = f.text_field :name, placeholder: "Username", required: true
         .user-image.col-md-2
           .btn.btn-primary Add image
+          = f.file_field :avatar
           = f.text_field :email, placeholder: "E-Mail", required: true
           = f.password_field :password, placeholder: "Password", required: true
       .col-md-12
