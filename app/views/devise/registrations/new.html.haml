@@ -1,28 +1,27 @@
-%form.container.user-new{action: ""}
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   .col-md-8.col-md-offset-2
     %header.row.user-nav.row
       .col-md-12
         %h2 Register
         .user-name_image.row
           .user-name.col-md-10
-            = f.text_field :name, placeholder: "Username", required: true, autocomplete: true
-          .user-image.col-md-2
-            %button.btn.btn-primary Add image
-            %input{type: "file"}/
-        = f.text_field :email, placeholder: "E-Mail", required: true, autocomplete: true
-        = f.password_field :password, placeholder: "Password", required: true, autocomplete: true
+          = f.text_field :name, placeholder: "Username", required: true
+        .user-image.col-md-2
+          .btn.btn-primary Add image
+          = f.text_field :email, placeholder: "E-Mail", required: true
+          = f.password_field :password, placeholder: "Password", required: true
       .col-md-12
         %h4 Member of
         .user-user-member.row
           .user-name.col-md-12
-            = f.text_area :member, placeholder: "Member", required: true, autocomplete: true
+            = f.text_area :member, placeholder: "Member"
         %h4 Profile
         .user-user-profile.row
           .user-name.col-md-12
-            = f.text_area :profile, placeholder: "Profile", required: true, autocomplete: true
+            = f.text_area :profile, placeholder: "Profile", required: true
         %h4 Works
         .user-name_image.row
           .user-name.col-md-12
-            = f.text_area :works, placeholder: "Works", required: true, autocomplete: true
+            = f.text_area :works, placeholder: "Works", required: true
     .row.text-center.user-btn
-      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Save
+    = f.submit "Sign Up", class: "btn btn-lg btn-primary btn-block"
