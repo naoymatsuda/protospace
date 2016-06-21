@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << : name, avatar, works, member, profile
-    devise_parameter_sanitizer.for(:account_update) << : name, avatar, works, member, profile
+    devise_parameter_sanitizer.for(:sign_up).push(:name, :avatar, :works, :member, :profile)
+    devise_parameter_sanitizer.for(:account_update).push(:name, :avatar, :works, :member, :profile)
   end
 
   def after_sign_out_path_for(resource)
-    'destroy_user_session'
+    'new_user_session'
   end
 
 end
