@@ -1,29 +1,30 @@
-.container
-= form_for(current_user) do |f|
-  .col-md-8.col-md-offset-2
-    %header.row.user-nav.row
-      .col-md-12
-        %h2 Edit profile
-        .user-name_image.row
-          .user-name.col-md-10
-          = f.text_field :name, placeholder: "Username", required: true
-        .user-image.col-md-2
-          .btn.btn-primary Add image
-          = f.file_field :avatar
-          = f.text_field :email, placeholder: "E-Mail", required: true
-          = f.password_field :password, placeholder: "Password", required: true
-      .col-md-12
-        %h4 Member of
-        .user-user-member.row
-          .user-name.col-md-12
-            = f.text_field :member, placeholder: "Member"
-        %h4 Profile
-        .user-user-profile.row
-          .user-name.col-md-12
-            = f.text_area :profile, placeholder: "Profile", required: true
-        %h4 Works
-        .user-name_image.row
-          .user-name.col-md-12
-            = f.text_area :works, placeholder: "Works", required: true
-    .row.text-center.user-btn
-      = f.submit "SAVE", class: "btn btn-lg btn-primary btn-block"
+.container.user-new.clearfix
+  = form_for current_user do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          %h2 Edit
+          .user-name_image.row
+            .user-name.col-md-10
+              = f.text_field :name, placeholder: "Input Username", autofocus: true, required: true
+            .user-image.col-md-2#js-main-image
+              = image_tag(current_user.avatar, class: "image-preview-user")
+              = f.file_field :avatar
+          .user-email
+            = f.text_field :email, placeholder: "Input Email", required: true
+        .col-md-12
+          %h4 Member of
+          .user-user-member.row
+            .user-name.col-md-12
+              = f.text_field :member, placeholder: "Input Position"
+          %h4 Profile
+          .user-user-profile.row
+            .user-name.col-md-12
+              = f.text_area :profile, placeholder: "Input Profile", size:"30×4"
+          %h4 Works
+          .user-name_image.row
+            .user-name.col-md-12
+              = f.text_area :works, placeholder: "Input Occupation", size: "30×4"
+        .row.text-center.user-btn
+          .actions
+            = f.submit "SAVE", id: "button", class: "btn btn-lg btn-primary btn-block"
