@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-before_action :authenticate_user!, only:[:update]
-before_action :set_user,only:[:update]
+before_action :authenticate_user!, only: [:edit :update]
+before_action :set_user,only: [:update]
 
   def edit
     redirect_to new_user_session_path unless user_signed_in?
