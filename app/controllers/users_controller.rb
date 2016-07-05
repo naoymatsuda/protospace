@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
-before_action :authenticate_user!
-before_action :set_user
+before_action :authenticate_user!, only:[:edit,:update]
+before_action :set_user,only:[:edit,:update]
 
   def edit
     redirect_to new_user_session_path unless user_signed_in?
@@ -9,9 +9,9 @@ before_action :set_user
 
   def update
     if @user.update(update_params)
-      redirect_to :only => [action: :show]
+      redirect_to action: :show
     else
-      render :only => [action: :edit]
+      render action: :edit
     end
   end
 
