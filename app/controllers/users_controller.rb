@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(update_params)
-      redirect_to action: :show
+      redirect_to action: :show, notice: "success"
     else
       render action: :edit
     end
