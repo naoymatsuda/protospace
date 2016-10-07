@@ -1,3 +1,3 @@
 class Image < ActiveRecord::Base
-  belongs_to :prototype_id
+  belongs_to :prototype
 end
