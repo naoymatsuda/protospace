@@ -4,7 +4,7 @@ class CreateImages < ActiveRecord::Migration
       t.integer :status
       t.string :image
       t.references :prototype
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end
