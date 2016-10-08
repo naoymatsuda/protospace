@@ -24,6 +24,7 @@
 - user_id references
 - catch_copy string
 - concept string
+- created_at timestamp
 
 ## images table
 ### association
