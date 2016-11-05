@@ -1,4 +1,5 @@
 class PrototypesController < ApplicationController
+  before_action :authenticate_user!, except: :index
 
   def index
   end
@@ -11,9 +12,13 @@ class PrototypesController < ApplicationController
   end
 
   def create
-    Prototypes.create(prototype_params)
-    redirect_to root_path
-      # Prototype.create(title: prototype_params[:catch_copy], image: tweet_params[:image], text: tweet_params[:text])
+    prototype = Prototype.new(prototype_params)
+    if prototype.save
+      redirect_to root_path, notice: 'your post is success'
+    else
+      render action: :new
+      redirect_to new_prototype_path alert 'ろぐいんしろ'
+    end
   end
 
   private
