@@ -14,7 +14,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
-    if prototype.save
+    if @prototype.save
       redirect_to root_path, notice: 'your post is success'
     else
       render action: :new
