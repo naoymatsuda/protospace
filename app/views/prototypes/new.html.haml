@@ -16,12 +16,12 @@
                   .image-upload
                   = f.fields_for :images do |i|
                     = i.file_field :image, placeholder: "file"
-                    = i.hidden_field :status, value: 0
+                    = i.hidden_field :status, value: 1
                 %li.list-group-item.col-md-4
                   .image-upload
                   = f.fields_for :images do |i|
                     = i.file_field :image, placeholder: "file"
-                    = i.hidden_field :status, value: 0
+                    = i.hidden_field :status, value: 1
                 %li.list-group-item.col-md-4
                   .image-upload-plus
                     %span +
