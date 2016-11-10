@@ -25,15 +25,18 @@
               = @user.works
 .container.proto-list
   .row
-    .col-sm-4.col-md-3.proto-content
-      .thumbnail
-        %a{href: ""}
-          = image_tag("sample.png")
-          .caption
-            %h3 Salvation Army on iPad App Wireframe
+    - @prototypes.each do |p|
+      .col-sm-4.col-md-3.proto-content
+        .thumbnail
+          = image_tag p.main_image.image
+          %p= link_to '削除', prototype_path(p) , method: :delete
+          %p= link_to '編集', edit_prototype_path(p)
+          %caption
+            %h3
+              = p.title
             .proto-meta
               .proto-date
-                Apr 26
+                = p.created_at.strftime('%Y年%m月%d日')
             %ul.proto-tag-list.list-inline
               %li
                 %a{href: "#", class: "btn btn-default"} iPad

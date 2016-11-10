@@ -22,6 +22,30 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def destroy
+    prototype = Prototype.find(params[:id])
+    if current_user.id == prototype.user.id
+      prototype.destroy
+      redirect_to root_path, notice: 'your post is deleted'
+    else
+     redirect_to :back, alert: 'unsuccessful'
+    end
+  end
+
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    prototype = Prototype.find(params[:id])
+    if current_user.id == prototype.user.id
+      prototype.update(prototype_params)
+      redirect_to root_path, notice: 'your update is success'
+    else
+     redirect_to :back, alert: 'your update is unsuccessful'
+    end
+  end
+
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:id, :status, :image]).merge(user_id: current_user.id)
