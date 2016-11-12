@@ -9,19 +9,19 @@
               .cover-image-upload
                 = f.fields_for :images do |i|
                   = i.file_field :image, placeholder: "file"
-                  = i.hidden_field :status, value: 0
+                  = i.hidden_field :status, value: "draft"
             .col-md-12
               %ul.proto-sub-list.list-group
                 %li.list-group-item.col-md-4
                   .image-upload
                   = f.fields_for :images do |i|
                     = i.file_field :image, placeholder: "file"
-                    = i.hidden_field :status, value: 1
+                    = i.hidden_field :status, value: "published"
                 %li.list-group-item.col-md-4
                   .image-upload
                   = f.fields_for :images do |i|
                     = i.file_field :image, placeholder: "file"
-                    = i.hidden_field :status, value: 1
+                    = i.hidden_field :status, value: "published"
                 %li.list-group-item.col-md-4
                   .image-upload-plus
                     %span +
@@ -37,3 +37,5 @@
                 /   = f.text_field :webdesign, placeholder: "Web Design"
                 /   = f.text_field :ui, placeholder: "UI"
                 /   = f.text_field :application, placeholder: "Application"
+            .row.text-center.proto-btn
+              = f.submit "sent", class: "button.btn.btn-lg.btn-primary.btn-block"

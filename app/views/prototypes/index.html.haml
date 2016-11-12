@@ -17,26 +17,24 @@
     - @prototypes.each do |p|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          %a{href: "/prototypes/show"}
+          = link_to prototype_path(p) do
             = image_tag p.main_image.image
-            - if current_user.id == p.user.id
-              / - else
-              /   - return true
-          .caption
-            %h3
-              = p.title
-            .proto-meta
-              .proto-user
-                %p= link_to p.user.name, user_path(p.user)
-              .proto-posted
-                = p.created_at.strftime('%Y年%m月%d日')
-            %ul.proto-tag-list.list-inline
-              %li
-                %a{href: "#", class: "btn btn-default"}
-                  iPad
-              %li
-                %a{href: "#", class: "btn btn-default"}
-                  wireframe
+            / - if current_user.id == p.user.id
+        .caption
+          %h3
+            = p.title
+          .proto-meta
+            .proto-user
+              %p= link_to p.user.name, user_path(p.user)
+            .proto-posted
+              = p.created_at.strftime('%Y年%m月%d日')
+          %ul.proto-tag-list.list-inline
+            %li
+              %a{href: "#", class: "btn btn-default"}
+                iPad
+            %li
+              %a{href: "#", class: "btn btn-default"}
+                wireframe
 .text-center
   %ul.pagination
     %li.disabled
@@ -56,4 +54,4 @@
       %a{href: "#"} 5
     %li
       %a{"aria-label" => "Next", href: "#"}
-        %span{"aria-hidden" => "true"}
+        %span{"aria-hidden" => "true"} >>
