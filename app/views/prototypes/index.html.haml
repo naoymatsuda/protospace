@@ -19,7 +19,6 @@
         .thumbnail
           = link_to prototype_path(p) do
             = image_tag p.main_image.image
-            / - if current_user.id == p.user.id
         .caption
           %h3
             = p.title
