@@ -9,13 +9,14 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(update_params)
-      redirect_to ({ action: :show }), notice: 'your user information was updated'
+      redirect_to action: :show, notice: 'your user information was updated'
     else
-      render action: :edit
+      render action: :edit, notice: 'your user information was unsuccessful'
     end
   end
 
   def show
+    @prototypes = @user.prototypes
   end
 
   private
