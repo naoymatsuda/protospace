@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   before_action :set_user,only: [:update, :show]
 
   def edit
-    # binding.pry
     redirect_to new_user_session_path unless user_signed_in?
   end
 
