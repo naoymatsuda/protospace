@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.update(update_params)
       redirect_to action: :show, notice: 'your user information was updated'
     else
-      render action: :edit
+      render action: :edit, notice: 'your user information was unsuccessful'
     end
   end
 

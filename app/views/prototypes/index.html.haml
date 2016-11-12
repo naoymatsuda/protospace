@@ -20,10 +20,6 @@
           %a{href: "/prototypes/show"}
             = image_tag p.main_image.image
             - if current_user.id == p.user.id
-              %p
-                = link_to '削除', prototype_path(p) , method: :delete
-              %p
-                = link_to '編集', edit_prototype_path(p)
               / - else
               /   - return true
           .caption
@@ -31,8 +27,7 @@
               = p.title
             .proto-meta
               .proto-user
-                %a{href: "#"}
-                  = p.user.name
+                %p= link_to p.user.name, user_path(p.user)
               .proto-posted
                 = p.created_at.strftime('%Y年%m月%d日')
             %ul.proto-tag-list.list-inline

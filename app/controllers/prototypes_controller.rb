@@ -1,5 +1,6 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :set_prototype, only: [:destroy, :edit, :update]
 
   def index
     @prototypes = Prototype.order(id: :desc)
@@ -19,14 +20,13 @@ class PrototypesController < ApplicationController
       redirect_to root_path, notice: 'your post is success'
     else
       render action: :new
-      redirect_to new_prototype_path alert 'ろぐいんしろ'
+      redirect_to new_prototype_path alert 'your post was unsuccessful'
     end
   end
 
   def destroy
-    prototype = Prototype.find(params[:id])
-    if current_user.id == prototype.user.id
-      prototype.destroy
+    if current_user.id == @prototype.user.id
+      @prototype.destroy
       redirect_to root_path, notice: 'your post is deleted'
     else
      redirect_to :back, alert: 'unsuccessful'
@@ -34,13 +34,11 @@ class PrototypesController < ApplicationController
   end
 
   def edit
-    @prototype = Prototype.find(params[:id])
   end
 
   def update
-    prototype = Prototype.find(params[:id])
-    if current_user.id == prototype.user.id
-      prototype.update(prototype_params)
+    if current_user.id == @prototype.user.id
+      @prototype.update(prototype_params)
       redirect_to root_path, notice: 'your update is success'
     else
      redirect_to :back, alert: 'your update is unsuccessful'
@@ -50,6 +48,10 @@ class PrototypesController < ApplicationController
   private
   def prototype_params
     params.require(:prototype).permit(:title, :catch_copy, :concept, images_attributes: [:id, :status, :image]).merge(user_id: current_user.id)
+  end
+
+  def set_prototype
+    @prototype = Prototype.find(params[:id])
   end
 
 end
