@@ -7,6 +7,9 @@ class PrototypesController < ApplicationController
   end
 
   def show
+    # @prototype = Prototype.includes(:thumbnails).find(params[:id])
+    @like = Like.find_by(user_id: @prototype.user_id, prototype_id: params[:id])
+    @likes = Like.where(prototype_id: params[:id])
   end
 
   def new
