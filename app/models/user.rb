@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: true
-  has_many :prototypes
-  has_many :likes
+  has_many :prototypes , dependent: :destroy
+  has_many :likes , dependent: :destroy
 
   mount_uploader :avatar
 
