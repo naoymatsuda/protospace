@@ -6,8 +6,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like = Like.find(params[:id])
-    like.destroy
+    like = Like.find(params[:id]).destroy
     likes_set
   end
 

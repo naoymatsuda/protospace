@@ -1,6 +1,6 @@
 - if user_signed_in?
   - if @like.present?
-    = link_to prototype_like_path(@prototype, @like), method: :delete, remote: true do
+    = link_to prototype_like_path(prototype, like), method: :delete, remote: true do
       %button.btn.btn-default
         = image_tag "icon_red_heart.svg"
         Like
