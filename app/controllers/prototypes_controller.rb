@@ -3,12 +3,14 @@ class PrototypesController < ApplicationController
   before_action :set_prototype, only: [:show, :destroy, :edit, :update]
 
   def index
-    @prototypes = Prototype.order(id: :desc)
+    @prototypes = Prototype.order("id desc")
   end
 
   def show
     @like = Like.find_by(user_id: @prototype.user_id, prototype_id: params[:id])
     @likes = Like.where(prototype_id: params[:id])
+    @comment = Comment.new
+    @comments = Comment.where( prototype_id: params[:id]).order('created_at ASC')
   end
 
   def new

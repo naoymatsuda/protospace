@@ -19,9 +19,10 @@
         .thumbnail
           = link_to prototype_path(p) do
             = image_tag p.main_image.image
-            - if current_user.id == p.user.id
-              = link_to '削除', prototype_path(p) , method: :delete
-              = link_to '編集', edit_prototype_path(p)
+            - if user_signed_in?
+              - if current_user.id == p.user_id
+                = link_to '削除', prototype_path(p) , method: :delete
+                = link_to '編集', edit_prototype_path(p)
           .caption
             %h3
               = p.title

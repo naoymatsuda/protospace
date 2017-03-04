@@ -1,0 +1,14 @@
+- comments.each do |a|
+  %li
+    %img{alt: "顔写真", height: "80", src: "a.user.avatar", width: "64*64"}
+    = a.user.name
+    = a.comment
+
+- if user_signed_in?
+  = form_for [prototype, comment], remote: true do |f|
+    %h4 Write a comment
+    .row
+      .form-group.col-md-10
+        = f.text_area :comment, placeholder: "Your comments", rows: "3", class: "form-control", required: true
+      .form-group.col-md-2
+      = f.submit "Comment", class: "btn btn-primary"

@@ -1,3 +1,4 @@
 class Comment < ActiveRecord::Base
-  belongs_to :prototype, counter_cache: true
+  belongs_to :user
+  belongs_to :prototype
 end
