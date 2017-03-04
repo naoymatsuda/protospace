@@ -14,8 +14,11 @@
 ActiveRecord::Schema.define(version: 20161112181513) do
 
   create_table "comments", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "prototype_id", limit: 4
+    t.text     "comment",      limit: 65535
+    t.integer  "user_id",      limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "images", force: :cascade do |t|

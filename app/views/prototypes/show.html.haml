@@ -37,3 +37,11 @@
           %a{href: "#", class: "btn btn-default"} iPad
         %li
           %a{href: "#", class: "btn btn-default"} wireframe
+  .row.proto-comments
+    %h4.col-md-12
+      Comments
+      %span.num (#{@comments.count})
+    .col-md-8
+      .col-md-6.text-right{ id: "comment-link" }
+        %ul#comment_list
+          = render partial: "comments/comment", locals: { prototype: @prototype ,comment: @comment,comments: @comments }

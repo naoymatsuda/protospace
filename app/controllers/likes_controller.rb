@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
 
   def create
-    like = current_user.likes.create(prototype_id: params[:prototype_id])
+    current_user.likes.create(prototype_id: params[:prototype_id])
     likes_set
   end
 
