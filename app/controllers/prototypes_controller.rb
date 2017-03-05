@@ -49,7 +49,7 @@ class PrototypesController < ApplicationController
       @prototype.update(prototype_params)
       redirect_to root_path, notice: 'your update is success'
     else
-     redirect_to :back, alert: 'your update is unsuccessful'
+      redirect_to :back, alert: 'your update is unsuccessful'
     end
   end
 
