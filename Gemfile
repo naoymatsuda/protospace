@@ -56,3 +56,4 @@ end
 
 gem 'pry-rails'
 
+gem 'acts-as-taggable-on'

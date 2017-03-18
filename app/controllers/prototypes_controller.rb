@@ -24,6 +24,7 @@ class PrototypesController < ApplicationController
 
   def create
     @prototype = Prototype.new(prototype_params)
+    @prototype.tag_list = params[:prototype][:tag].join(", ")
     if @prototype.save
       redirect_to root_path, notice: 'your post is success'
     else

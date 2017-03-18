@@ -5,6 +5,8 @@ class Prototype < ActiveRecord::Base
   accepts_nested_attributes_for :images, reject_if: :reject_image
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+  # acts_as_taggable_on :labels
+  acts_as_taggable
 
   def reject_image(attributed)
     attributed['image'].blank?
