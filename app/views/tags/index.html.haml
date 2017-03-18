@@ -4,4 +4,4 @@
       %h2 Tags list
       .row
         - @tags.each do |tag|
-          = link_to tag , tag_path(tag)
+          = link_to tag.name , tag_path(tag)
