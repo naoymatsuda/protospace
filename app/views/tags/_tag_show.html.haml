@@ -1,0 +1,12 @@
+.thumbnail
+  .caption
+    %h3= @tags.title
+    .proto-meta
+      .proto-user
+        = link_to "by #{@tags.user.username}", user_path(@tags.user_id)
+      .proto-posted
+        = @tags.created_at.strftime('%b %d')
+    %ul.proto-tag-list.list-inline
+      - @prototypes.each do |prototype|
+        %li
+          = link_to prototype.name, prototype_path(prototype), class: "btn btn-default"
