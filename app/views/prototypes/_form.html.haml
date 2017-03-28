@@ -33,9 +33,9 @@
             .col-md-12
               %h4 Tag List
               .row
-                / .col-md-3
-                /   = f.text_field :webdesign, placeholder: "Web Design"
-                /   = f.text_field :ui, placeholder: "UI"
-                /   = f.text_field :application, placeholder: "Application"
+                .col-md-3
+                  = text_field_tag "prototype[tag][]", "", placeholder: "Web Design"
+                  = text_field_tag "prototype[tag][]", "", placeholder: "UI"
+                  = text_field_tag "prototype[tag][]", "", placeholder: "Application"
             .row.text-center.proto-btn
               = f.submit "sent", class: "button.btn.btn-lg.btn-primary.btn-block"
